@@ -1,0 +1,35 @@
+<div style="display: flex; 
+            flex-direction: column; 
+            align-items: center;
+            justify-content:center;" 
+      class="table rounded-4">
+  <h2 style="text-align: center; font-family: monospace;color:rgb(105, 105, 105); font-size:2.5em;" class="pb-2">
+    Lista de productos ! </h2>
+  <table class="table align-middle d-flex justify-content-center">
+    <tr class="text-warning">
+      <th class="font-weight-bold"></th>
+      <th class="font-weight-bold">Producto</th>
+      <th class="font-weight-bold">Precio</th>
+    </tr>
+    <% products.forEach(product=> { %>
+      <tr>
+        <td>
+          <div>
+            <img src=<%= product.image %> alt=<%= product.name %> style="min-height: 2em; max-height: 10em; border-radius: 25px">
+          </div>
+        </td>
+        <td>
+          <%= product.name %>
+        </td>
+        <td>
+          <%= "$ " + product.price %>
+        </td>
+      </tr>
+      <% }); %>
+  </table>
+</div>
+
+
+<button name="volver" style="border-radius:25px; color: black;height: 3em;width: 14em; display: block; margin: 5em auto; background-color:rgb(221, 154, 154);">
+  <a href="../" style="color: black"> Volver Atrás</a>
+</button>

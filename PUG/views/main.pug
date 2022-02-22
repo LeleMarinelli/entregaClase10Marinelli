@@ -1,0 +1,42 @@
+extend ./layout
+block form
+    h3(class="text-primary") Agrega un producto a la lista!
+    br
+    form(action="/api/products" method="post")
+        div(class="form-group")
+            label(for="nombre") Nombre
+            input(type="text" name="name" id="name" class="form-control")
+        div(class="form-group")
+            label(for="apellido") Precio
+            input(type="number" name="price" id="price" class="form-control")
+        div(class="form-group")
+            label(for="edad") Imagen
+            input(type="text" name="image" id="image" class="form-control")
+        div(style="display: flex; justify-content: center; align-items: center;" class="pt-4")
+            input(type="submit" value="Crear producto" class="submit-button" style="border-radius:25px; height: 2em;width: 14em; background-color:rgb(154, 221, 162);")
+
+    button(name="productos" style="border-radius:25px; height: 3em;width: 20em; display: block; margin: 2em auto; background-color:rgb(162, 154, 221);")
+        a(href="/productos" style="color: rgb(255, 255, 255)") Lista de productos
+
+
+block listaProductos
+    div(style="display: flex; flex-direction: column; align-items: center; justify-content:center;" class="table rounded-4")
+        h2(style="text-align: center; font-family: monospace;color:rgb(105, 105, 105); font-size:2.5em;" class="pb-2") Lista de productos !
+        table(class="table align-middle d-flex justify-content-center")
+            tr(class="text-warning")
+                th(class="font-weight-bold")
+                th(class="font-weight-bold") Producto
+                th(class="font-weight-bold") Precio
+            
+            each product in products
+                tr
+                    td
+                        div
+                        img(src= product.image alt= product.name  style="min-height: 2em; max-height: 10em; border-radius: 25px")
+                    td= product.name
+                    td="$ " + product.price
+
+
+
+    button(name="volver" style="border-radius:25px; color: black;height: 3em;width: 14em; display: block; margin: 5em auto; background-color:rgb(221, 154, 154);")
+        a(href="../" style="color: black") Volver Atrás
