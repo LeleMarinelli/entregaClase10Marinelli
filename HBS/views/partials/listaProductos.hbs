@@ -1,0 +1,44 @@
+<div style="width: 80%; 
+            margin: 0 auto; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+            justify-content:center; 
+            border-radius:25px;
+            background-color:rgb(155, 155, 155);">
+    <h2 style="text-align: center; margin-top: 1.5em; font-family: monospace;color:rgb(255, 255, 255); font-size:2.5em;"> Lista de productos! </h2>
+   
+
+    <table>
+      <tr>
+        <th></th>
+        <th style="text-align: center; font-family: monospace; font-size:1.5em;">Producto</th>
+        <th style="text-align: center; font-family: monospace; font-size:1.5em;">Precio</th>
+      </tr>
+      {{#each products}}
+        <tr>
+          <td> <div style="height: 250px;width: 250px;margin:16px;">
+                 <img src={{this.image}} alt={{this.name}} style="width: 100%; min-height: 100%; max-height: 100%; border-radius: 25px">
+               </div></td>
+          <td> <h4 style="font-family: monospace; text-align: center; font-size:large; color:whitesmoke">{{this.name}}</h4></td>
+          <td> <h4 style="font-family: monospace; text-align: center; font-size:large; color:rgb(120, 119, 119)">{{this.price}}</h4></td>
+        </tr>
+      {{/each}}
+    </table>
+
+    
+        {{!-- <div style="display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;">
+          
+          
+         
+        </div> --}}
+    
+
+    <button name="volver" style="border-radius:25px; height: 2em;width: 14em; margin: 5em auto;"><a href="../"> Volver Atrás</a></button>
+
+    
+    
+  </div>

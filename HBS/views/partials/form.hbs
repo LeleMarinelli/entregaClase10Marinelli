@@ -1,0 +1,33 @@
+ <!-- Formulario para agregar productos -->
+  
+    <div style="width: 20em; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content:center; border-radius:25px; background-color:rgb(155, 155, 155);">
+      <div><h3 style="text-align: center; margin: 3em 0; font-family: monospace;"> Agrega un producto a la lista! </h3></div>
+      <form action="/api/products" method="post">
+        <div style="margin-bottom: 16px;">
+
+          <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+            <label for="nombre"> Nombre del producto: </label>
+            <br>
+            <input type="text" name="name" id="nombre" style="margin-bottom: 16px;" class="input-file">
+          </div>
+
+          <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+            <label for="precio"> Precio: </label>
+            <br>
+            <input type="number" name="price" id="precio" style="margin-bottom: 16px;" step=".01" class="input-file">
+          </div>
+
+          <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+            <label for="imagen"> URL Imagen: </label>
+            <br>
+            <input type="text" name="image" id="imagen" style="margin-bottom: 16px;" class="input-file">
+          </div>
+
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <input type="submit" value="Crear producto" class="submit-button" style="border-radius:25px; height: 2em;width: 14em; background-color:rgb(154, 221, 162);"></div>
+        </div>
+
+      </form>
+    </div>
+
+    <button name="productos" style="border-radius:25px; height: 3em;width: 20em; display: block; margin: 2em auto; background-color:rgb(162, 154, 221);"><a href="/productos" style="color: rgb(255, 255, 255)"> Lista de productos</a></button>
